@@ -6,3 +6,8 @@ CREATE TABLE gender (
 );
 
 INSERT INTO gender (genderId, gender) VALUES (1, 'Male'), (2, 'Female'), (3, 'Other');
+
+CREATE TABLE roles (
+    roleId INT PRIMARY KEY AUTO_INCREMENT,
+    role VARCHAR(15) NOT NULL
+);
