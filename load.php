@@ -1,7 +1,7 @@
 <?php
 
-require "includes/constants.php";
-require "includes/dbConnection.php";
+require_once "includes/constants.php";
+require_once "includes/dbConnection.php";
 
 // Class Auto Load
 function ClassAutoload($ClassName){

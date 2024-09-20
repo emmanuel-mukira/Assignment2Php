@@ -1,8 +1,4 @@
 <?php
-
-
-
-// Define constants using environment variables
 define('DBTYPE','PDO' );
 define('HOSTNAME', 'localhost');
 define('DBPORT', '3306');
