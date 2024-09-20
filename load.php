@@ -24,4 +24,7 @@ spl_autoload_register('ClassAutoload');
     $Objforms = new forms();
     $conn = new dbConnection(DBTYPE, HOSTNAME, DBPORT, HOSTUSER, HOSTPASS, DBNAME);
 
-    
+
+// Creating process intances
+   $ObjAuth = new auth();
+   $ObjAuth->signup($conn);
