@@ -4,14 +4,18 @@ class forms{
         ?>
             <div class="row align-items-md-stretch">
             <div class="col-md-8">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="sign_up_handler.php" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="fullname" class="form-label">Fullname: </label>
                         <input type="text" name="fullname" class="form-control form-control-lg" id="fullname" placeholder="Enter your name" maxlength="50" autofocus>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address: </label>
-                        <input type="email" name="fullname" class="form-control form-control-lg" id="email" placeholder="Enter your email" maxlength="50">
+                        <input type="email" name="email" class="form-control form-control-lg" id="email" placeholder="Enter your email" maxlength="50">
+                    </div>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username: </label>
+                        <input type="text" name="username" class="form-control form-control-lg" id="username" placeholder="Enter your username" maxlength="50">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password: </label>
@@ -31,7 +35,7 @@ class forms{
                             <option value="2">User</option>
                         </select>
                             <div class="col-12">
-                                <button class="btn btn-primary" type="submit">Submit form</button>
+                                <button class="btn btn-primary" type="submit" name="signup">Submit form</button>
                             </div>
                         </form>
                     </div>

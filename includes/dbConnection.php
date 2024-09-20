@@ -9,7 +9,7 @@ class dbConnection {
   private $db_pass;
   private $db_name;
 
-public function _construct($db_type,$db_host,$db_port,$db_user,$db_pass,$db_name){
+public function __construct($db_type,$db_host,$db_port,$db_user,$db_pass,$db_name){
   $this->db_type = $db_type;
   $this->db_host = $db_host;
   $this->db_port = $db_port;
@@ -21,7 +21,7 @@ public function _construct($db_type,$db_host,$db_port,$db_user,$db_pass,$db_name
 
  public function connection($db_type,$db_host,$db_port,$db_user,$db_pass,$db_name){
 
-    if ($db_type == 'PDO') {
+    if ($this->db_type == 'PDO') {
       try{
         $this->connection = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
         // set the PDO error mode to exception

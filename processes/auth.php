@@ -67,10 +67,9 @@ class auth {
             $sql = "INSERT INTO users (fullname, email, username, password, genderId, roleId) VALUES (?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param('ssssii', $data['fullname'], $data['email'], $data['username'], $data['password'], $data['genderId'], $data['roleId']);
-            
             if ($stmt->execute()) {
                 // Redirect to signup page on success
-                header('Location: signup.php?success');
+                echo "Added successfully";
                 exit();
             } else {
                 die("Error: " . $conn->error);
