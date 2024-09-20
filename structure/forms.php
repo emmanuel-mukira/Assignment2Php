@@ -13,11 +13,28 @@ class forms{
                         <label for="email" class="form-label">Email address: </label>
                         <input type="email" name="fullname" class="form-control form-control-lg" id="email" placeholder="Enter your email" maxlength="50">
                     </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Submit form</button>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password: </label>
+                        <input type="password" name="password" class="form-control form-control-lg" id="password" placeholder="Enter your password"></label>
                     </div>
-                </form>
-            </div>
+                    <div class="mb-3">
+                        <label for="genderId" class="form-label">Gender</label>
+                        <select class="form-control" id="genderId" name="genderId">
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="roleId" class="form-label">Role</label>
+                        <select class="form-control" id="roleId" name="roleId">
+                            <option value="1">Admin</option>
+                            <option value="2">User</option>
+                        </select>
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="submit">Submit form</button>
+                            </div>
+                        </form>
+                    </div>
         <?php
     }
 }
