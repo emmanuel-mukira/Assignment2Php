@@ -35,13 +35,15 @@ public function __construct($db_type,$db_host,$db_port,$db_user,$db_pass,$db_nam
 
   public function insert($table,$data){
     ksort($data);
-    $fieldDetails=NULL;
     $fieldNames = implode('`, `', array_keys($data));
-    $fieldValues = implode("', '", array_values($data));
-    $sth = "INSERT INTO $table (`$fieldNames`) VALUES ('$fieldValues')";
-    
+    $fieldValues = ':' . implode(', :', array_keys($data));
+    $sth = "INSERT INTO $table (`$fieldNames`) VALUES ($fieldValues)";
+    $stmt = $this->connection->prepare($sth);
+    foreach ($data as $key => $value) {
+      $stmt->bindValue(":$key", $value);
+    }
     try{
-     $this->connection->exec($sth);
+     $stmt->execute();
      return TRUE;
      }catch(PDOException $e) {
       return $sth . "<br>" . $e->getMessage();
