@@ -33,6 +33,11 @@ public function __construct($db_type,$db_host,$db_port,$db_user,$db_pass,$db_nam
     }
   }
 
+  // Method to get the PDO connection
+  public function getConnection() {
+    return $this->connection;
+  }
+
   public function insert($table,$data){
     ksort($data);
     $fieldNames = implode('`, `', array_keys($data));
