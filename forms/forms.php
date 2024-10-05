@@ -1,10 +1,29 @@
 <?php
+// Enable error reporting for debugging
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 class forms{
-    public function sign_up_form(){
+    public function sign_up_form($errors=[]){
         ?>
             <div class="row align-items-md-stretch">
             <div class="col-md-8">
-                <form action="sign_up_handler.php" method="post" enctype="multipart/form-data">
+                <form action="<?php print basename($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+                    <!-- Form fields remain the same -->
+                    
+                    <!-- Display Errors -->
+                    <?php if (!empty($errors)): ?>
+                        <div class="alert alert-danger">
+                            <ul>
+                                <?php foreach ($errors as $error): ?>
+                                    <li><?php echo htmlspecialchars($error); ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+
+                    <!-- Continue with form fields -->
+
                     <div class="mb-3">
                         <label for="fullname" class="form-label">Fullname: </label>
                         <input type="text" name="fullname" class="form-control form-control-lg" id="fullname" placeholder="Enter your name" maxlength="50" autofocus>

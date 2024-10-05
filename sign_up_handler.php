@@ -1,4 +1,4 @@
-<?php
+<!-- 
 // Enable error reporting for debugging
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -12,4 +12,4 @@ $auth = new auth();
 
 // Call the signup method to process the form submission
 $auth->signup();
-?>
+?> -->
