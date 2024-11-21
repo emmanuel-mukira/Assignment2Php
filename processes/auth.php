@@ -105,15 +105,17 @@ class auth {
                         $lang['AccRegVer_template']
                     )
                 ];
-
-                    // Call the SendMail method to send the email
+            
+                // Call the SendMail method to send the email
                 try {
                     $this->mail->SendMail($mailMsg); // Use the SendMail object to send the email
+                    session_start(); // Ensure the session is started
+                    $_SESSION['email'] = $email_address; // Store email in session
+                    echo 'Sign up successful. Please check your email for the verification code.';
                 } catch (Exception $e) {
                     // Handle error, possibly log it
                     echo 'Email could not be sent: ' . $e->getMessage();
                 }
-                echo 'Sign up successful. Please check your email for the verification code.';
             } else {
                 die("Error: Failed to add user");
             }
